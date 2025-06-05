@@ -9,23 +9,22 @@ def cantidadVectores():
             else:
                 print("Cantidad inválida. El número debe ser mayor que 0.")
         except ValueError:
-            print("El número ingresado no puede ser impar. Por favor, intentelo de nuevo.")
+            print("El número ingresado no puede contener decimales. Por favor, intentelo de nuevo.")
 
 def metodoIngresoVector():
-    def ingresoVector():
-        while True:
-            print("Seleccione el método que desea utilizar para ingresar el vector:")
-            print("1. Ingresar por magnitud y dirección")
-            print("2. Imgresar por componentes")
-            print("Respuesta: ")
-            opcion = input()
+    while True:
+        print("Seleccione el método que desea utilizar para ingresar el vector:")
+        print("1. Ingresar por magnitud y dirección")
+        print("2. Ingresar por componentes")
+        print("Respuesta: ")
+        opcion = input()
 
-            if opcion == '1':
-                return ingresoPorMagnitudDireccion()
-            elif opcion == '2':
-                return ingresoPorComponentes()
-            else:
-                print("Opción inválida. Por favor, intente de nuevo.")
+        if opcion == '1':
+            return ingresoPorMagnitudDireccion()
+        elif opcion == '2':
+            return ingresoPorComponentes()
+        else:
+            print("Opción inválida. Por favor, intente de nuevo.")
 
 def ingresoPorMagnitudDireccion():
     try:
@@ -48,6 +47,21 @@ def ingresoPorComponentes():
     except ValueError:
         print("El número que ingresó, no es correcto. Asegúrese de ingresar números válidos.")
         return ingresoPorComponentes()
+    
 
-        
-        
+def sumaVectores(cantidadVectores):
+    ladoSumaX = 0
+    ladoSumaY = 0
+    
+    for i in range(cantidadVectores):
+        print(f"\nVector #{i + 1}")
+        x, y = metodoIngresoVector()
+        print(f"Componente X: {x:.2f}, Componente Y: {y:.2f}")
+        ladoSumaX += x
+        ladoSumaY += y
+    return (ladoSumaX, ladoSumaY)
+
+def resultadoSuma(vectorFinal):
+    ladoX, ladoY = vectorFinal
+    print("\nSuma de los vectores:")
+    print(f"Vector final: x = {ladoX:.2f}, y = {ladoY:.2f}")
