@@ -11,6 +11,7 @@ def cantidadVectores():
         except ValueError:
             print("El número ingresado no puede contener decimales. Por favor, intentelo de nuevo.")
 
+
 def metodoIngresoVector():
     while True:
         print("Seleccione el método que desea utilizar para ingresar el vector:")
@@ -25,6 +26,7 @@ def metodoIngresoVector():
             return ingresoPorComponentes()
         else:
             print("Opción inválida. Por favor, intente de nuevo.")
+
 
 def ingresoPorMagnitudDireccion():
     try:
@@ -61,6 +63,7 @@ def sumaVectores(cantidadVectores):
         ladoSumaY += y
     return (ladoSumaX, ladoSumaY)
 
+
 def resultadoSuma(vectorFinal):
     ladoX, ladoY = vectorFinal
     print("\nSuma de los vectores:")
@@ -72,6 +75,7 @@ def main():
     cantidad = cantidadVectores()
     vectorFinal = sumaVectores(cantidad)
     resultadoSuma(vectorFinal)
+    
 
 if __name__ == "__main__":
     main()
