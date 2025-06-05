@@ -65,3 +65,13 @@ def resultadoSuma(vectorFinal):
     ladoX, ladoY = vectorFinal
     print("\nSuma de los vectores:")
     print(f"Vector final: x = {ladoX:.2f}, y = {ladoY:.2f}")
+
+
+def main():
+    print("Programa Suma de Vectores")
+    cantidad = cantidadVectores()
+    vectorFinal = sumaVectores(cantidad)
+    resultadoSuma(vectorFinal)
+
+if __name__ == "__main__":
+    main()
